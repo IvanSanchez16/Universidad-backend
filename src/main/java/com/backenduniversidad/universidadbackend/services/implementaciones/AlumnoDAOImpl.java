@@ -9,31 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-public class AlumnoDAOImpl implements AlumnoDAO {
+public class AlumnoDAOImpl extends GenericDAOImpl<Persona, PersonaRepository, Integer> implements AlumnoDAO {
 
     @Autowired
-    @Qualifier("repositorioAlumnos")
-    private PersonaRepository repository;
-
-    @Override
-    @Transactional(readOnly = true)
-    public Optional<Persona> findById(Integer id) {
-        return repository.findById(id);
-    }
-
-    @Override
-    public Persona save(Persona persona) {
-        return repository.save(persona);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Iterable<Persona> findAll() {
-        return repository.findAll();
-    }
-
-    @Override
-    public void deleteById(Integer id) {
-        repository.deleteById(id);
+    public AlumnoDAOImpl(@Qualifier("repositorioAlumnos") PersonaRepository repository) {
+        super(repository);
     }
 }
