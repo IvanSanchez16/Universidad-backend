@@ -1,23 +1,23 @@
 package com.backenduniversidad.universidadbackend.services.implementaciones;
 
 import com.backenduniversidad.universidadbackend.modelo.entidades.Persona;
-import com.backenduniversidad.universidadbackend.repositorios.AlumnoRepository;
 import com.backenduniversidad.universidadbackend.repositorios.PersonaRepository;
-import com.backenduniversidad.universidadbackend.services.contratos.AlumnoDAO;
+import com.backenduniversidad.universidadbackend.repositorios.ProfesorRepository;
+import com.backenduniversidad.universidadbackend.services.contratos.ProfesorDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.transaction.annotation.Transactional;
 
-public class AlumnoDAOImpl extends PersonaDAOImpl implements AlumnoDAO {
+public class ProfesorDAOImpl extends PersonaDAOImpl implements ProfesorDAO {
 
     @Autowired
-    public AlumnoDAOImpl(@Qualifier("repositorioAlumnos") PersonaRepository repository) {
+    public ProfesorDAOImpl(@Qualifier("repositorioProfesores") PersonaRepository repository) {
         super(repository);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Iterable<Persona> buscarAlumnosPorCarrera(String carrera) {
-        return ((AlumnoRepository)repository).buscarAlumnosPorCarrera(carrera);
+    public Iterable<Persona> buscarProfesoresPorCarrera(String carrera) {
+        return ((ProfesorRepository)repository).buscarProfesoresPorCarrera(carrera);
     }
 }

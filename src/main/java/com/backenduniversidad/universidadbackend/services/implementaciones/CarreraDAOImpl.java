@@ -5,6 +5,7 @@ import com.backenduniversidad.universidadbackend.repositorios.CarreraRepository;
 import com.backenduniversidad.universidadbackend.services.contratos.CarreraDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CarreraDAOImpl extends GenericDAOImpl<Carrera, CarreraRepository, Integer> implements CarreraDAO {
@@ -12,5 +13,11 @@ public class CarreraDAOImpl extends GenericDAOImpl<Carrera, CarreraRepository, I
     @Autowired
     public CarreraDAOImpl(CarreraRepository repository) {
         super(repository);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Iterable<Carrera> buscarCarrerasPorProfesorNombreYApellido(String nombre, String apellido) {
+        return repository.buscarCarrerasPorProfesorNombreYApellido(nombre, apellido);
     }
 }
