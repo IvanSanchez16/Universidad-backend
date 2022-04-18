@@ -11,5 +11,5 @@ public interface AulaDAO extends GenericDAO<Aula, Integer>{
 
     Iterable<Aula> findByPabellonNombre(String nombre);
 
-    Optional<Aula> findByNumeroaula(Integer numeroAula);
+    Optional<Aula> findByNumeroAula(Integer numeroAula);
 }

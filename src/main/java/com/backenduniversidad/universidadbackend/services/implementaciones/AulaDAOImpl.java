@@ -28,7 +28,7 @@ public class AulaDAOImpl extends GenericDAOImpl<Aula, AulaRepository, Integer> i
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<Aula> findByNumeroaula(Integer numeroAula) {
-        return repository.findByNumeroaula(numeroAula);
+    public Optional<Aula> findByNumeroAula(Integer numeroAula) {
+        return repository.findByNumeroAula(numeroAula);
     }
 }
