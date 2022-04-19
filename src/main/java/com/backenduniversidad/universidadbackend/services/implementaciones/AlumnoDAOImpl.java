@@ -6,8 +6,10 @@ import com.backenduniversidad.universidadbackend.repositorios.PersonaRepository;
 import com.backenduniversidad.universidadbackend.services.contratos.AlumnoDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Service
 public class AlumnoDAOImpl extends PersonaDAOImpl implements AlumnoDAO {
 
     @Autowired

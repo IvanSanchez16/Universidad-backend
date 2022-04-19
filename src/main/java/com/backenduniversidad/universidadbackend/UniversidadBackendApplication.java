@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class UniversidadBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UniversidadBackendApplication.class, args);
+		String[] beans = SpringApplication.run(UniversidadBackendApplication.class, args).getBeanDefinitionNames();
+
+//		for (String b: beans) {
+//			System.out.println(b);
+//		}
 	}
 
 }

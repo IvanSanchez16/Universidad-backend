@@ -6,5 +6,5 @@ public interface AlumnoDAO extends PersonaDAO{
 
     Iterable<Persona> buscarAlumnosPorCarrera(String carrera);
 
-    //TODO Cerrar la seccion 4 - practica
+    //TODO Seccion 7 - Hacer controladores de los demas recursos - 80
 }

@@ -4,10 +4,12 @@ import com.backenduniversidad.universidadbackend.modelo.entidades.Aula;
 import com.backenduniversidad.universidadbackend.modelo.entidades.enumeradores.Pizarron;
 import com.backenduniversidad.universidadbackend.repositorios.AulaRepository;
 import com.backenduniversidad.universidadbackend.services.contratos.AulaDAO;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+@Service
 public class AulaDAOImpl extends GenericDAOImpl<Aula, AulaRepository, Integer> implements AulaDAO {
 
     public AulaDAOImpl(AulaRepository repository) {
